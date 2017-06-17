@@ -1,0 +1,19 @@
+User:
+  columns:
+    username: string
+    password: string
+  relationships:
+    tokens:
+      entity: Token
+      toMany: true
+      inverse: user
+
+Token:
+  columns:
+    token:
+      type: uuid
+      default: uuidv4
+  relationships:
+    user:
+      entity: User
+      inverse: tokens

@@ -1,0 +1,31 @@
+{
+  "name": "js-core-data-auth",
+  "description": "Authorization middleware for js-core-data package",
+  "version": "0.0.1",
+  "license": "MIT",
+  "keywords": [
+    "ORM",
+    "CoreData",
+    "authorization",
+    "authentication",
+    "auth"
+  ],
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "express": "^4.15.3",
+    "js-sha512": "^0.3.0",
+    "jwt-simple": "^0.5.1"
+  },
+  "devDependencies": {
+    "js-core-data": "^1.6.4",
+    "mocha": "^3.4.2",
+    "sqlite3": "^3.1.8"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jakubknejzlik/js-core-data-auth.git"
+  }
+}
