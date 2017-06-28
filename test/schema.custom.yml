@@ -1,0 +1,19 @@
+Customer:
+  columns:
+    email: string
+    customPassword: string
+  relationships:
+    accessTokens:
+      entity: CustomerToken
+      toMany: true
+      inverse: customer
+
+CustomerToken:
+  columns:
+    hash:
+      type: uuid
+      default: uuidv4
+  relationships:
+    customer:
+      entity: Customer
+      inverse: accessTokens
