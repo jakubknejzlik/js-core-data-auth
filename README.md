@@ -1,4 +1,7 @@
 # js-core-data-auth
+
+[![Build Status](https://travis-ci.org/jakubknejzlik/js-core-data-auth.svg?branch=master)](https://travis-ci.org/jakubknejzlik/js-core-data-auth)
+
 Authorization middleware for js-core-data
 
 # Example
