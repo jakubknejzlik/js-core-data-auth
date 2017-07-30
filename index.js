@@ -18,10 +18,10 @@ const authorization = (database, options) => {
       .catch(next);
   };
 };
-const authenticate = (database, options) => {
-  const token =
-    req.headers.authorization || req.query.token || req.query.access_token;
+const authentication = (database, options) => {
   return (req, res, next) => {
+    const token =
+      req.headers.authorization || req.query.token || req.query.access_token;
     authenticate(database, token, options)
       .then(credentials => {
         req.credentials = credentials;
@@ -36,6 +36,8 @@ const auth = (database, options) => {
 
   router.post("/authorize", authorization(database, options));
   router.use(authentication(database, options));
+
+  return router;
 };
 
 module.exports = {
