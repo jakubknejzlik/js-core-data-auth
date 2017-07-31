@@ -11,7 +11,7 @@ const authorization = (database, options) => {
     authorize(database, username, password, options)
       .then(result => {
         res.status(201).send({
-          token: result.access_token.token,
+          access_token: result.access_token.token,
           user: result.user
         });
       })
