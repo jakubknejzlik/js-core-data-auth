@@ -22,6 +22,15 @@ const authentication = (database, options) => {
   return (req, res, next) => {
     const token =
       req.headers.authorization || req.query.token || req.query.access_token;
+
+    if (!token) {
+      return res
+        .status(401)
+        .send(
+          "Unauthorized (neither authorization header or access_token is provided)"
+        );
+    }
+
     authenticate(database, token, options)
       .then(credentials => {
         req.credentials = credentials;
