@@ -26,14 +26,14 @@ describe("authorization", () => {
 
     it("should authorize user", () => {
       return authorize(database, "test", "test").then(credentials => {
-        assert.ok(credentials.token);
+        assert.ok(credentials.access_token);
         assert.equal(credentials.user.username, "test");
       });
     });
 
     it("should authenticate user", () => {
       return authenticate(database, "token").then(credentials => {
-        assert.ok(credentials.token);
+        assert.ok(credentials.access_token);
         assert.equal(credentials.user.username, "test");
       });
     });
@@ -75,14 +75,14 @@ describe("authorization", () => {
         "test",
         authOptions
       ).then(credentials => {
-        assert.ok(credentials.token);
+        assert.ok(credentials.access_token);
         assert.equal(credentials.user.email, "test");
       });
     });
 
     it("should authenticate user", () => {
       return authenticate(database, "token", authOptions).then(credentials => {
-        assert.ok(credentials.token);
+        assert.ok(credentials.access_token);
         assert.equal(credentials.user.email, "test");
       });
     });
