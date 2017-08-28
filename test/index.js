@@ -18,7 +18,7 @@ describe("authorization", () => {
           username: "test",
           password: passwordLib.generatePassword("test")
         });
-        const token = context.create("Token", { token: "token" });
+        const token = context.create("AccessToken", { token: "token" });
         token.setUser(user);
         return context.save();
       });
@@ -49,7 +49,7 @@ describe("authorization", () => {
       userEntityName: "Customer",
       userUsernameColumn: "email",
       userPasswordColumn: "customPassword",
-      userTokenRelationshipName: "accessTokens",
+      userTokenRelationshipName: "tokens",
       tokenEntityName: "CustomerToken",
       tokenAttributeName: "hash",
       tokenUserRelationshipName: "customer"

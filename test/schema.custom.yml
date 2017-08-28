@@ -3,7 +3,7 @@ Customer:
     email: string
     customPassword: string
   relationships:
-    accessTokens:
+    tokens:
       entity: CustomerToken
       toMany: true
       inverse: customer
@@ -16,4 +16,4 @@ CustomerToken:
   relationships:
     customer:
       entity: Customer
-      inverse: accessTokens
+      inverse: tokens

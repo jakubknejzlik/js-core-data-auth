@@ -3,12 +3,12 @@ User:
     username: string
     password: string
   relationships:
-    tokens:
-      entity: Token
+    accessTokens:
+      entity: AccessToken
       toMany: true
       inverse: user
 
-Token:
+AccessToken:
   columns:
     token:
       type: uuid
@@ -16,4 +16,4 @@ Token:
   relationships:
     user:
       entity: User
-      inverse: tokens
+      inverse: accessTokens

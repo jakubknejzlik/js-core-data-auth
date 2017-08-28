@@ -26,16 +26,14 @@ User:
     username: string
     password: string
   relationships:
-    tokens:
-      entity: Token
+    accessTokens:
+      entity: AccessToken
       toMany: true
       inverse: user
 
-Token:
+AccessToken:
   columns:
-    token:
-      type: uuid
-      default: uuidv4
+    token: string
   relationships:
     user:
       entity: User
