@@ -1,7 +1,7 @@
 {
   "name": "js-core-data-auth",
   "description": "Authorization middleware for js-core-data package",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "MIT",
   "keywords": [
     "ORM",
